@@ -7,6 +7,9 @@
 
 - `return *this;`の誤字
 
+## vec3, `inline std::ostream& operator<<`でコンパイルエラー
+vec3.hの最後の行に`#endif`を書く
+
 ## 球体のレンダリング
 赤い球が画面中心ではなく右上に配置される
 
