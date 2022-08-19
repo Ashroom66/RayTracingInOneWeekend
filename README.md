@@ -16,3 +16,9 @@ vec3.hの最後の行に`#endif`を書く
 - `vec3.h`の実装ミス
   - ×`operator/`, 〇`operator/=`
   - `operator*`: 乗算じゃなくて加算してた
+
+## `[hittable.h] sphere`クラス
+`hittable.h`に記述するのに`#include "hittable.h"`？
+
+- 資料の誤字(pdf, HTML両方)
+- 実際は`sphere.h`にsphereクラスを書く
