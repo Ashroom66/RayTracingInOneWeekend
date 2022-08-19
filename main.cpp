@@ -5,15 +5,15 @@
 using namespace std;
 
 double hit_sphere(const point3& center, double radius, const ray& r) {
-    vec3 oc = r.origin() - center;  // レイのA-C, レイ原点と球座標をつなぐ
+    vec3 oc = r.origin() - center;  // (ray)origin - (sphere)center
     auto a = dot(r.direction(), r.direction());
-    auto b = 2.0 * dot(oc, r.direction());
+    auto half_b = dot(oc, r.direction());
     auto c = dot(oc, oc) - radius*radius;
-    auto discriminant = b*b-4*a*c;
+    auto discriminant = half_b*half_b-a*c;
     if (discriminant < 0) { // 非衝突時は負、衝突時は交点までの最短距離を返す
         return -1.0;
     } else {
-        return (-b - sqrt(discriminant)) / (2.0*a);
+        return (-half_b - sqrt(discriminant)) / a;
     }
 }
 
