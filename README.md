@@ -35,3 +35,20 @@ vec3.hの最後の行に`#endif`を書く
   - t_max, t_minの値が異常に低い(6.95e-310, 0)
   - `hittable_list::hit` closest_so_far変数に`temp.rec.t`を入れて、それを`object->hit`のtmaxにしている。
     - ここだった。`auto closest_so_far = temp_rec.t;` => `auto closest_so_far = tmax;`
+
+## `#include エラーが検出されました`
+エラーをパッシブで可視化する拡張機能入れていたら`#include (自作ヘッダーファイル)`で上記エラー。includePathを更新してくれと言われる。
+
+`${workplaceFolder}`をincludePathに追加して解決
+```
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}"
+            ],
+```
+
+## `ソース ファイルを開けません`(iostream, cmath, memoryなど)
+`/usr/include/**`をincludePathに指定しても上記エラーが出る。
+
+- includePathで`/usr/include/**`を設定すると、なぜか`(現在地)/usr/include/**`と同義になる。
+- 原因不明。ひとまず無視
