@@ -23,7 +23,7 @@ class hittable_list: public hittable {
 
     public:
     std::vector<shared_ptr<hittable>> objects;
-}
+};
 
 bool hittable_list::hit(
     const ray& r, double tmin, double tmax, hit_record& rec
@@ -33,7 +33,7 @@ bool hittable_list::hit(
     auto closest_so_far = temp_rec.t;
 
     for (const auto& object : objects) {
-        if (object->hit(r, t_min, closest_so_far, temp_rec)) {
+        if (object->hit(r, tmin, closest_so_far, temp_rec)) {
             hit_anything = true;
             closest_so_far = temp_rec.t;
             rec = temp_rec;

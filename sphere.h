@@ -20,7 +20,7 @@ class sphere: public hittable {
 bool sphere::hit(
     const ray& r, double t_min, double t_max, hit_record& rec
 ) const {
-    vec3 oc = o.origin() - center;
+    vec3 oc = r.origin() - center;
     auto a = r.direction().length_squared();
     auto half_b = dot(oc, r.direction());
     auto c = oc.length_squared() - radius*radius;
@@ -46,8 +46,8 @@ bool sphere::hit(
                 return true;
             }
         }
-        return false;
     }
+    return false;
 }
 
 #endif
