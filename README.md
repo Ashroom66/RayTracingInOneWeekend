@@ -22,3 +22,14 @@ vec3.hの最後の行に`#endif`を書く
 
 - 資料の誤字(pdf, HTML両方)
 - 実際は`sphere.h`にsphereクラスを書く
+
+## hittable_list
+実装時に球体がレンダリングできなくなった。
+
+- デバッグプリントで原因特定
+  - `main` 球体衝突時のif文の中身が実行されていない
+  - `hittable_list::hit` object->hitのif文がtrueにならない
+  - `sphere::hit` discriminantは0以上だが、tempとt_max,t_minの比較結果がtrueにならない
+  - t_max, t_minの値が異常に低い(6.95e-310, 0)
+  - `hittable_list::hit` closest_so_far変数に`temp.rec.t`を入れて、それを`object->hit`のtmaxにしている。
+    - ここだった。`auto closest_so_far = temp_rec.t;` => `auto closest_so_far = tmax;`

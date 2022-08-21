@@ -30,7 +30,7 @@ bool hittable_list::hit(
 ) const {
     hit_record temp_rec;
     bool hit_anything = false;
-    auto closest_so_far = temp_rec.t;
+    auto closest_so_far = tmax;
 
     for (const auto& object : objects) {
         if (object->hit(r, tmin, closest_so_far, temp_rec)) {
