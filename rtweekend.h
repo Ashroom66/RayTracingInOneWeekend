@@ -30,6 +30,11 @@ inline double random_double(double min, double max) {
     // [min, max)の実数乱数を生成
     return min + (max-min)*random_double();
 }
+inline double clamp(double x, double min, double max) {
+    if (x<min) {return min;}
+    if (x>max) {return max;}
+    return x;
+}
 
 // 共通ヘッダー
 #include "ray.h"
