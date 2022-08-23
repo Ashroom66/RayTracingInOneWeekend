@@ -65,4 +65,10 @@ BRDFを定義して、それに沿って実装しているのとは訳が違う
 ## 完全なランバート反射
 Scanlines remaining:87でsegmentation fault
 
-- 前のランバート反射の実装のミス。再帰的呼び出しで`depth-1`
+- 前のランバート反射の実装のミス。再帰的呼び出しで`depth-1`を`depth`にしていた
+
+## materialクラスの実装
+日本語pdf資料にミス(`#include "rtweekend"`抜け)
+
+## ランバーティアンの実装
+日本語pdf資料の誤字`sphere.h` => `material.h`
