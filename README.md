@@ -80,3 +80,10 @@ Scanlines remaining:87でsegmentation fault
    19 |         if (rec.mat_ptr->scatter(r, rec, attenuation, scattered)) {
       |                        ^~
 ```
+
+(日本語版・英語版どちらにも記載なし) `main.cc`に以下の2行を追加
+
+```
+#include "material.h"
+#include "sphere.h"
+```
