@@ -52,9 +52,9 @@ int main() {
     hittable_list world;
 
     world.add(make_shared<sphere>(point3(0, 0, -1), 0.5, make_shared<lambertian>(color(0.7, 0.3, 0.3))));
-    world.add(make_shared<sphere>(point3(0, -100.5, -1), 100, make_shared<lambertian>(color(0.8, 0.8, 0.8))));
-    world.add(make_shared<sphere>(point3(1, 0, -1), 0.5, make_shared<metal>(color(0.8, 0.6, 0.2))));
-    world.add(make_shared<sphere>(point3(-1, 0, -1), 0.5, make_shared<metal>(color(0.8, 0.8, 0.8))));
+    world.add(make_shared<sphere>(point3(0, -100.5, -1), 100, make_shared<lambertian>(color(0.2, 0.8, 0.4))));
+    world.add(make_shared<sphere>(point3(1, 0, -1), 0.5, make_shared<metal>(color(0.8, 0.6, 0.2), 0.3)));
+    world.add(make_shared<sphere>(point3(-1, 0, -1), 0.5, make_shared<metal>(color(0.8, 0.8, 0.8), 1.0)));
 
     camera cam;
     
