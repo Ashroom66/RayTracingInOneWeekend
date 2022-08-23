@@ -104,4 +104,10 @@ vec3 random_in_unit_sphere() {
         return p;
     }
 }
+vec3 random_unit_vector() {
+    auto a = random_double(0, 2*pi);    // azimuth
+    auto z = random_double(-1, 1);      // z position
+    auto r = sqrt(1 - z*z);             // radius
+    return vec3(r*cos(a), r*sin(a), z);
+}
 #endif
