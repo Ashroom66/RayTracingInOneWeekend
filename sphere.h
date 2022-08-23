@@ -35,6 +35,7 @@ bool sphere::hit(
             rec.p = r.at(rec.t);
             vec3 outward_normal = (rec.p-center) / radius;
             rec.set_face_normal(r, outward_normal);
+            rec.mat_ptr = mat_ptr;
             return true;
         } else {
             // 交点のもう一方もチェック
@@ -44,6 +45,7 @@ bool sphere::hit(
                 rec.p = r.at(rec.t);
                 vec3 outward_normal = (rec.p-center) / radius;
                 rec.set_face_normal(r, outward_normal);
+                rec.mat_ptr = mat_ptr;
                 return true;
             }
         }

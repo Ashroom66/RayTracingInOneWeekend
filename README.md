@@ -72,3 +72,11 @@ Scanlines remaining:87でsegmentation fault
 
 ## ランバーティアンの実装
 日本語pdf資料の誤字`sphere.h` => `material.h`
+
+## 金属球を使ったシーンの実装
+コンパイルエラー。
+```
+./main.cpp:19:24: error: invalid use of incomplete type ‘using element_type = class material’ {aka ‘class material’}
+   19 |         if (rec.mat_ptr->scatter(r, rec, attenuation, scattered)) {
+      |                        ^~
+```
