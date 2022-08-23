@@ -90,3 +90,7 @@ Scanlines remaining:87でsegmentation fault
 
 # ぼやけた金属球
 マイクロファセットじゃない実装。反射するレイの方向を、鏡面反射方向を中心とする球体のサンプルでとっている。BSDFで実装したときより変更点少なくてシンプル
+
+## 誘電体の実装
+日本語pdf資料の抜け：　`material.h`のメンバ`double ref_idx`の前に`public:`がない
+- あと変数名を英語版から少し変えている
