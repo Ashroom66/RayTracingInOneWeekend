@@ -94,3 +94,8 @@ Scanlines remaining:87でsegmentation fault
 ## 誘電体の実装
 日本語pdf資料の抜け：　`material.h`のメンバ`double ref_idx`の前に`public:`がない
 - あと変数名を英語版から少し変えている
+
+## 薄レンズ近似
+サンプルレイはcam originを円盤状に広げて、そこからランダムにサンプルして実装する
+- `random_in_unit_disk`：棄却法でサンプル
+- 
