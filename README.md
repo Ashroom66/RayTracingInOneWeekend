@@ -98,4 +98,6 @@ Scanlines remaining:87でsegmentation fault
 ## 薄レンズ近似
 サンプルレイはcam originを円盤状に広げて、そこからランダムにサンプルして実装する
 - `random_in_unit_disk`：棄却法でサンプル
-- 
+
+## 最後のシーン
+Killedと表示される
