@@ -101,3 +101,13 @@ Scanlines remaining:87でsegmentation fault
 
 ## 最後のシーン
 Killedと表示される
+
+
+```
+hittable_list random_scene() {
+    hittable_list world;
+    auto ground_material = make_shared<lambertian>(color(0.5, 0.5, 0.5));
+    for (int a=-11; 1<11; a++) {
+      ...
+```
+誤字で無限ループに陥ってた
